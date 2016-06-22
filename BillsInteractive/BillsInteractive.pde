@@ -24,8 +24,13 @@ PImage testImage;
 
 void setup() {
   size(380, 240); 
+  
+  String[] cameras = Capture.list();
+  
+  
+  
   // capture video at half size for speed
-  video = new Capture(this, 640/2, 480/2);
+  video = new Capture(this, cameras[24]);
   video.start();   
   // declare our SVM object
   model = new SVM(this);
